@@ -24,7 +24,7 @@ RUN /your-scripts.sh
 docker pull evilfreelancer/docker-routeros
 docker run -d -p 2222:22 -p 8728:8728 -p 8729:8729 -p 5900:5900 -ti evilfreelancer/docker-routeros
 ```
-
+docker run -d -p 81:80 -p 500:500 -p 4500:4500 -p 8291:8291 -p 1701:1701 -p 1702:1702 -p 1703:1703 -p 2222:22 -p 8728:8728 -p 8729:8729 -p 5900:5900 -ti evilfreelancer/docker-routeros
 ### Use in docker-compose.yml
 
 Example is [here](docker-compose.yml).
