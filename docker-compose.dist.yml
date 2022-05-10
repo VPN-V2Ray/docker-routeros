@@ -2,20 +2,26 @@ version: "3"
 
 services:
 
-  routeros-6-42:
-    image: evilfreelancer/docker-routeros:6.42.12
+  routeros-7-2-3:
+    image: evilfreelancer/docker-routeros:7.2.3
     restart: unless-stopped
     cap_add:
       - NET_ADMIN
     devices:
       - /dev/net/tun
     ports:
+      - "180:80"
+      - "500:500"
+      - "4500:4500"
+      - "1701:1701"
+      - "1702:1702"
       - "12222:22"
       - "12223:23"
+      - "18291:8291"
       - "18728:8728"
       - "18729:8729"
 
-  routeros-6-47:
+  routeros-7-2-3:
     image: evilfreelancer/docker-routeros:latest
     restart: unless-stopped
     cap_add:
@@ -23,10 +29,13 @@ services:
     devices:
       - /dev/net/tun
     ports:
-      - "22222:22"
-      - "22223:23"
-      - "7777:80"
-      - "8728:8728"
-      - "8729:8729"
-      - "28728:8728"
-      - "28729:8729"
+      - "180:80"
+      - "500:500"
+      - "4500:4500"
+      - "1701:1701"
+      - "1702:1702"
+      - "12222:22"
+      - "12223:23"
+      - "18291:8291"
+      - "18728:8728"
+      - "18729:8729"
