@@ -68,9 +68,12 @@ For this you need download project and build everything from scratch:
 
 ```bash
 git clone https://github.com/EvilFreelancer/docker-routeros.git
+
+git clone https://github.com/VPN-V2Ray/docker-routeros.git
 cd docker-routeros
-docker build . --tag ros
-docker run -d -p 2222:22 -p 8728:8728 -p 8729:8729 -p 5900:5900 -ti ros
+docker buildx build . --tag ros
+docker run  --name=routeros -tid -p 2222:22 -p 500:500 -p 4500:4500 -p 1701:1701 -p 1702:1702 -p 1723:1723 -p 8728:8728 -p 8729:8729 -p 5900:5900  -p 18291:8291 -p 180:80  ros
+
 ```
 
 Now you can connect to your RouterOS container via VNC protocol
